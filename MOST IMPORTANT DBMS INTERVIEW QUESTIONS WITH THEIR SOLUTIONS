@@ -1,0 +1,526 @@
+1. **What are the advantages of DBMS over traditional file-based systems?**
+
+   Database management systems (DBMS) were developed to address the challenges of traditional file-processing systems supported by conventional operating systems. The advantages of DBMS include:
+   
+   - **Data Redundancy and Inconsistency:** DBMS reduces data redundancy and inconsistency by ensuring that data is stored in a centralized location.
+   - **Difficulty in Accessing Data:** DBMS provides efficient data retrieval mechanisms.
+   - **Data Isolation:** DBMS handles multiple files and formats, ensuring data integration.
+   - **Integrity Problems:** DBMS enforces data integrity constraints.
+   - **Atomicity of Updates:** DBMS ensures atomic transactions, meaning all operations in a transaction are completed successfully or none are.
+   - **Concurrent Access by Multiple Users:** DBMS supports concurrent data access by multiple users.
+   - **Security Problems:** DBMS provides robust data security mechanisms.
+
+2. **What are super, primary, candidate, and foreign keys?**
+
+   - **Super Key:** A super key is a set of attributes within a table that can uniquely identify a tuple.
+   
+   - **Candidate Key:** A candidate key is a minimal super key, meaning no subset of it can be a super key.
+   
+   - **Primary Key:** A primary key is a candidate key chosen to uniquely identify tuples in a table. A table can have only one primary key.
+   
+   - **Foreign Key:** A foreign key is a field (or collection of fields) in one table that uniquely identifies a row in another table.
+
+3. **What is the difference between primary key and unique constraints?**
+
+   - **Primary Key:** Cannot have NULL values and each table can have only one primary key.
+   
+   - **Unique Constraints:** Can have NULL values and a table can have multiple unique constraints.
+
+4. **What is database normalization?**
+
+   Database normalization is the process of structuring a relational database to minimize redundancy and dependency. It involves decomposing tables into smaller tables and defining relationships among them to:
+   
+   - Minimize redundancy.
+   - Minimize insertion, deletion, and update anomalies.
+
+5. **Why is the use of DBMS recommended? Explain by listing some of its major advantages.**
+
+   DBMS is recommended due to its numerous advantages:
+   
+   - **Controlled Redundancy:** It reduces data duplication by centralizing data storage.
+   
+   - **Data Sharing:** Allows simultaneous data sharing among multiple users.
+   
+   - **Backup and Recovery:** Provides automated backup and recovery features.
+   
+   - **Enforcement of Integrity Constraints:** Ensures data integrity through constraints.
+   
+   - **Independence of Data:** Allows changes to data structure without affecting applications.
+
+6. **What are the differences between DDL, DML, and DCL in SQL?**
+
+   - **DDL (Data Definition Language):** Commands like CREATE, ALTER, DROP, TRUNCATE, and RENAME that define the structure of the database.
+   
+   - **DML (Data Manipulation Language):** Commands like SELECT, INSERT, DELETE, and UPDATE that manipulate data.
+   
+   - **DCL (Data Control Language):** Commands like GRANT and REVOKE that control access to data.
+
+7. **What is the difference between HAVING and WHERE clause?**
+
+   - **WHERE Clause:** Filters records before grouping and cannot include aggregate functions.
+   
+   - **HAVING Clause:** Filters records after grouping and can include aggregate functions.
+
+8. **How to print duplicate rows in a table?**
+
+   To print duplicate rows in a table, refer to the guide on GeeksforGeeks: [How to Print Duplicate Rows in a Table](https://www.geeksforgeeks.org/how-to-print-duplicate-rows-in-a-table/).
+
+9. **What is Join?**
+
+   An SQL Join combines data from two or more tables based on a related column. Example:
+   
+   ```sql
+   SELECT StudentCourse.CourseID, Student.StudentName
+   FROM StudentCourse
+   INNER JOIN Student 
+   ON StudentCourse.EnrollNo = Student.EnrollNo
+   ORDER BY StudentCourse.CourseID;
+   ```
+
+10. **What is Identity?**
+
+    Identity (or AutoNumber) is a column that automatically generates unique numeric values, usually starting at 1 and incrementing by 1.
+
+11. **What is a view in SQL? How to create a view?**
+
+    A view is a virtual table based on the result set of an SQL query. To create a view:
+    
+    ```sql
+    CREATE VIEW view_name AS
+    SELECT column_name(s)
+    FROM table_name
+    WHERE condition;
+    ```
+
+12. **What are the uses of view?**
+
+    - Represent a subset of data.
+    - Join and simplify multiple tables.
+    - Act as aggregated tables.
+    - Hide data complexity.
+    - Take little storage space.
+    - Provide extra security.
+
+13. **What is a Trigger?**
+
+    A Trigger is a set of SQL statements that automatically execute when certain actions (INSERT, UPDATE, DELETE) occur on a table.
+
+14. **What is a stored procedure?**
+
+    A stored procedure is a precompiled set of SQL statements stored in the database that can be executed as a single unit.
+
+15. **What is the difference between Trigger and Stored Procedure?**
+
+    Triggers execute automatically in response to specific events, while stored procedures must be explicitly invoked.
+
+16. **What is a transaction? What are ACID properties?**
+
+    A transaction is a set of database operations that are executed as a single unit. ACID properties ensure reliability:
+    
+    - **Atomicity:** All operations complete successfully or none do.
+    - **Consistency:** Database remains consistent after the transaction.
+    - **Isolation:** Transactions do not interfere with each other.
+    - **Durability:** Changes are permanent after the transaction.
+
+17. **What are indexes?**
+
+    Indexes are data structures that improve the speed of data retrieval operations on a database table at the cost of additional writes and storage space.
+
+18. **What are clustered and non-clustered indexes?**
+
+    - **Clustered Indexes:** Define the physical storage order of data. Only one per table.
+    
+    - **Non-Clustered Indexes:** Define logical order and use pointers. Multiple can exist per table.
+
+19. **What is Denormalization?**
+
+    Denormalization is the process of adding redundant data to optimize database performance.
+
+20. **What is CLAUSE in SQL?**
+
+    A clause is a part of an SQL query that allows for filtering or customizing the query results.
+
+21. **What is a Live Lock?**
+
+    Live lock occurs when two or more processes continuously change their states in response to changes in other processes without doing any useful work, unlike a deadlock where processes are waiting.
+
+22. **What is QBE (Query By Example)?**
+
+    QBE is a visual approach for querying databases using templates called skeleton tables, allowing users to create queries without knowing SQL.
+
+23. **Why are cursors necessary in embedded SQL?**
+
+    Cursors are used to store and navigate through the rows of a query result set for row-by-row processing in application programs.
+
+24. **What is the purpose of normalization in DBMS?**
+
+    Normalization organizes database attributes to reduce redundancy and anomalies, dividing large tables into smaller related tables.
+
+25. **What is the difference between a database schema and a database state?**
+
+    - **Database Schema:** The overall design of the database.
+    
+    - **Database State:** The data stored in the database at a particular moment in time.
+
+26. **What is the purpose of SQL?**
+
+    SQL (Structured Query Language) is used to interact with relational databases, performing operations such as inserting, updating, deleting, and querying data.
+### 26. Explain the concepts of a Primary key and Foreign Key.
+
+**Question:**  
+Explain the concepts of a Primary key and Foreign Key.
+
+**Answer:**  
+A **Primary Key** is used to uniquely identify the records in a database table. A **Foreign Key** is used to link two or more tables together by being a field(s) in one table that is the primary key of another table.
+
+**Example:**  
+Consider two tables, Employee and Department. Both have a common field/column 'ID'. 'ID' is the primary key of the Employee table and the foreign key in the Department table.
+
+---
+
+### 27. What are the main differences between Primary key and Unique Key?
+
+**Question:**  
+What are the main differences between a Primary key and a Unique Key?
+
+**Answer:**  
+- A **Primary key** can never have a NULL value, whereas a **Unique key** may have a NULL value.
+- There can be only one primary key in each table, but there can be more than one unique key.
+
+---
+
+### 28. What is the concept of a sub-query in terms of SQL?
+
+**Question:**  
+What is the concept of a sub-query in terms of SQL?
+
+**Answer:**  
+A **Sub-query** is a query included inside another query, also known as an inner query, which is found within the outer query.
+
+---
+
+### 29. What is the use of the DROP command and what are the differences between DROP, TRUNCATE, and DELETE commands?
+
+**Question:**  
+What is the use of the DROP command and what are the differences between DROP, TRUNCATE, and DELETE commands?
+
+**Answer:**  
+The **DROP** command is a DDL command used to delete an existing table, database, index, or view from the database.
+
+**Differences:**
+- **DROP**: Permanently deletes tables and all related indexes and privileges.
+- **TRUNCATE**: Deletes data within a table but preserves the table structure; can be rolled back until a commit is made.
+- **DELETE**: A DML command that deletes specific rows from a table and can be rolled back; slower than truncate.
+
+---
+
+### 30. What is the main difference between UNION and UNION ALL?
+
+**Question:**  
+What is the main difference between UNION and UNION ALL?
+
+**Answer:**  
+**UNION** removes duplicate rows and picks only distinct rows after combining data from the tables, whereas **UNION ALL** does not remove duplicate rows and picks all data from the tables.
+
+---
+
+### 31. What is a Correlated Subquery in DBMS?
+
+**Question:**  
+What is a Correlated Subquery in DBMS?
+
+**Answer:**  
+A **Correlated Subquery** is a nested query that is executed once for each row of the outer query. 
+
+**Example of Non-Correlated Subquery:**
+```sql
+SELECT * FROM EMP WHERE 'RIYA' IN (SELECT Name FROM DEPT WHERE EMP.EMPID=DEPT.EMPID);
+```
+The inner query is not executed for each row of the outer query.
+
+---
+
+### 32. Explain Entity, Entity Type, and Entity Set in DBMS?
+
+**Question:**  
+Explain Entity, Entity Type, and Entity Set in DBMS.
+
+**Answer:**  
+- **Entity**: An object, place, or thing with an independent existence, e.g., a person or book.
+- **Entity Type**: A collection of entities with the same attributes, e.g., STUDENT table with attributes like name, age, and id.
+- **Entity Set**: A collection of entities of the same type, e.g., employees of a firm.
+
+---
+
+### 33. What are the different levels of abstraction in the DBMS?
+
+**Question:**  
+What are the different levels of abstraction in the DBMS?
+
+**Answer:**  
+There are three levels of data abstraction in DBMS:
+1. **Physical Level**: Lowest level, describing how data is stored.
+2. **Logical Level**: Next level, describing the type of data and relationships.
+3. **View Level**: Highest level, showing only part of the database.
+
+---
+
+### 34. What integrity rules exist in the DBMS?
+
+**Question:**  
+What integrity rules exist in the DBMS?
+
+**Answer:**  
+Two major integrity rules:
+- **Entity Integrity**: Primary key values cannot be NULL.
+- **Referential Integrity**: A foreign key must either be NULL or match a primary key in another table.
+
+---
+
+### 35. What is the E-R model in the DBMS?
+
+**Question:**  
+What is the E-R model in the DBMS?
+
+**Answer:**  
+The **E-R model** (Entity-Relationship model) in DBMS is based on the concept of entities and the relationships that exist among these entities.
+
+---
+
+### 36. What is a functional dependency in the DBMS?
+
+**Question:**  
+What is a functional dependency in the DBMS?
+
+**Answer:**  
+A **functional dependency** describes the relationship between different attributes in a relation.
+
+**Example:**  
+If relation R1 has attributes Y and Z, and Z is functionally dependent on Y, it can be shown as Y -> Z.
+
+---
+
+### 37. What is 1NF in the DBMS?
+
+**Question:**  
+What is 1NF in the DBMS?
+
+**Answer:**  
+**1NF** (First Normal Form) ensures that the domain of an attribute has only atomic values, removing duplicate columns in a table.
+
+---
+
+### 38. What is 2NF in the DBMS?
+
+**Question:**  
+What is 2NF in the DBMS?
+
+**Answer:**  
+**2NF** (Second Normal Form) requires that:
+- The table is in 1NF.
+- Each non-prime attribute is fully functionally dependent on the primary key.
+
+---
+
+### 39. What is 3NF in the DBMS?
+
+**Question:**  
+What is 3NF in the DBMS?
+
+**Answer:**  
+**3NF** (Third Normal Form) requires that:
+- The table is in 2NF.
+- Each non-prime attribute is non-transitively dependent on every key of the table.
+
+---
+
+### 40. What is BCNF in the DBMS?
+
+**Question:**  
+What is BCNF in the DBMS?
+
+**Answer:**  
+**BCNF** (Boyce-Codd Normal Form) is stricter than 3NF. It requires that:
+- The table is in 3NF.
+- For each functional dependency X -> Y, X is a super key.
+
+---
+
+### 41. What is a CLAUSE in terms of SQL?
+
+**Question:**  
+What is a CLAUSE in terms of SQL?
+
+**Answer:**  
+A **CLAUSE** in SQL is used to fetch specific data based on conditions. Examples include WHERE and HAVING clauses.
+
+---
+
+### 42. How can you get the alternate records from the table in SQL?
+
+**Question:**  
+How can you get the alternate records from the table in SQL?
+
+**Answer:**  
+To fetch odd-numbered rows:
+```sql
+SELECT EmpId FROM (SELECT rowno, EmpId FROM Emp) WHERE MOD(rowno, 2) = 1;
+```
+To fetch even-numbered rows:
+```sql
+SELECT EmpId FROM (SELECT rowno, EmpId FROM Emp) WHERE MOD(rowno, 2) = 0;
+```
+
+---
+
+### 43. How is the pattern matching done in SQL?
+
+**Question:**  
+How is the pattern matching done in SQL?
+
+**Answer:**  
+Pattern matching in SQL is done using the **LIKE** operator with '%' to match 0 or more characters and '_' to match a single character.
+
+**Example:**
+```sql
+SELECT * FROM Emp WHERE name LIKE 'b%';
+SELECT * FROM Emp WHERE name LIKE 'hans_';
+```
+
+---
+
+### 44. What is a join in SQL?
+
+**Question:**  
+What is a join in SQL?
+
+**Answer:**  
+A **Join** is an SQL statement used to combine data or rows from two or more tables based on a common field/column.
+
+---
+
+### 45. What are the different types of joins in SQL?
+
+**Question:**  
+What are the different types of joins in SQL?
+
+**Answer:**  
+There are four types of SQL Joins:
+1. **Inner Join**: Fetches common data from both tables.
+2. **Left Join**: Returns all rows from the left table and matching rows from the right table.
+3. **Right Join**: Returns all rows from the right table and matching rows from the left table.
+4. **Full Join**: Returns rows from all tables, with non-matching rows holding null values.
+
+---
+
+### 46. Explain the Stored Procedure.
+
+**Question:**  
+Explain the Stored Procedure.
+
+**Answer:**  
+A **Stored Procedure** is a group of SQL statements in the form of a function with a unique name, stored in the RDBMS, and can be accessed as needed.
+
+---
+
+### 47. What is RDBMS?
+
+**Question:**  
+What is RDBMS?
+
+**Answer:**  
+**RDBMS** (Relational Database Management System) stores data in the form of tables and data is accessed based on common fields among the tables.
+
+---
+
+### 48. What are the different types of relationships in the DBMS?
+
+**Question:**  
+What are the different types of relationships in the DBMS?
+
+**Answer:**  
+Different types of relationships are:
+1. **One-to-One**: One record in each table.
+2. **One-to-Many**: One record in the primary key table can relate to many records in the related table.
+3. **Many-to-Many**: Both tables can relate to many records in each other.
+
+---
+
+### 49. What do you mean by Entity type extension?
+
+**Question:**  
+What do you mean by Entity type extension?
+
+**Answer:**  
+**Entity type extension** refers to
+
+ the compilation of similar entity types into one particular type, grouped together as an entity set.
+
+---
+
+### 50. What is conceptual design in DBMS?
+
+**Question:**  
+What is conceptual design in DBMS?
+
+**Answer:**  
+**Conceptual design** is the first stage in the database design process, aiming to create a database independent of database software and physical details, resulting in a conceptual data model describing data entities, attributes, relationships, and constraints.
+
+---
+
+### 51. Differentiate between logical database design and physical database design. Show how this separation leads to data independence.
+
+**Question:**  
+Differentiate between logical database design and physical database design. Show how this separation leads to data independence.
+
+**Answer:**  
+
+**Logical Database Design:**
+- **Task:** Transforms the conceptual schema into a relational database schema.
+- **Choice of Criteria:** System-independent mapping, tailoring schemas to a specific DBMS.
+- **Result:** DDL statements specifying conceptual and external level schemas.
+
+**Physical Database Design:**
+- **Task:** Specifies storage structures, record placement, and indexes.
+- **Choice of Criteria:** Response time, space utilization, transaction throughput.
+- **Result:** Defines storage structures and access paths for database files.
+
+**Data Independence:**  
+The separation between logical and physical design leads to data independence by maintaining a conceptual and external schema independent of the physical storage details.
+
+---
+
+### 52. What are temporary tables? When are they useful?
+
+**Question:**  
+What are temporary tables? When are they useful?
+
+**Answer:**  
+**Temporary tables** exist solely for a particular session or transaction. They are useful for specialized rollups or specific application processing requirements. Created using the CREATE GLOBAL TEMPORARY TABLE command in Oracle.
+
+---
+
+### 53. Explain different types of failures that occur in the Oracle database.
+
+**Question:**  
+Explain different types of failures that occur in the Oracle database.
+
+**Answer:**  
+Types of Failures in Oracle Database:
+- **Statement Failure:** Bad data type, insufficient space, insufficient privileges.
+- **User Process Failure:** Abnormal disconnect, session termination, address exception.
+- **User Error:** Dropping a table, modifying data.
+- **Instance Failure:** System crashes.
+- **Media Failure:** Disk failures.
+- **Alert Logs:** Record informational and error messages, instance startups, and shutdowns.
+
+---
+
+### 54. What is the main goal of RAID technology?
+
+**Question:**  
+What is the main goal of RAID technology?
+
+**Answer:**  
+**RAID** (Redundant Array of Inexpensive/Independent Disks) combines several hard disks into one logical unit to address fault tolerance and performance limitations of conventional disk storage. It offers higher fault tolerance and throughput than single or independent hard drives, essential for various client/server applications.
+
